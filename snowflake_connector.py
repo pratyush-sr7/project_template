@@ -10,7 +10,14 @@ SNOWFLAKE_USER = os.getenv("SNOWFLAKE_USER")
 SNOWFLAKE_PASSWORD = os.getenv("SNOWFLAKE_PASSWORD")
 SNOWFLAKE_ROLE = os.getenv("SNOWFLAKE_ROLE")
 SNOWFLAKE_WAREHOUSE = os.getenv("SNOWFLAKE_WAREHOUSE")
+SNOWFLAKE_DATABASE = os.getenv("SNOWFLAKE_DATABASE")
 
 class Snowflake:
-  con = snowflake.connector.connect(host=SNOWFLAKE_HOST,account=SNOWFLAKE_ACCOUNT,user=SNOWFLAKE_USER,password=SNOWFLAKE_PASSWORD,role=SNOWFLAKE_ROLE,warehouse=SNOWFLAKE_WAREHOUSE)
+  con = snowflake.connector.connect(host=SNOWFLAKE_HOST,
+                                    account=SNOWFLAKE_ACCOUNT,
+                                    user=SNOWFLAKE_USER,
+                                    password=SNOWFLAKE_PASSWORD,
+                                    role=SNOWFLAKE_ROLE,
+                                    warehouse=SNOWFLAKE_WAREHOUSE,
+                                    database=SNOWFLAKE_DATABASE)
   cur = con.cursor()
